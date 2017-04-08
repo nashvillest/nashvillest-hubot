@@ -6,7 +6,7 @@
   "description": "Honoring the legacy of Nashville public access star Joey Bowker.",
   "dependencies": {
     "hubot": "^2.19.0",
-    "hubot-darksky": "^1.0.2",
+    "hubot-darksky": "^1.1.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-flickr-group-search": "^1.0.0",
     "hubot-google-images": "^0.2.6",
@@ -15,13 +15,13 @@
     "hubot-heroku-keepalive": "^1.0.2",
     "hubot-maps": "0.0.2",
     "hubot-nashville-news": "^1.0.2",
-    "hubot-nashville-pollen": "^1.0.0",
+    "hubot-nashville-pollen": "^1.1.0",
     "hubot-plusplus": "^1.4.0",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.3",
     "hubot-rules": "^0.1.1",
     "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^4.3.3"
+    "hubot-slack": "^4.3.4"
   },
   "engines": {
     "node": "0.10.x"
