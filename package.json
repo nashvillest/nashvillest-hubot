@@ -6,6 +6,7 @@
   "description": "Honoring the legacy of Nashville public access star Joey Bowker.",
   "dependencies": {
     "hubot": "^2.19.0",
+    "hubot-bcycle-finder": "^2.0.2",
     "hubot-darksky": "^1.1.0",
     "hubot-diagnostics": "0.0.2",
     "hubot-flickr-group-search": "^1.0.0",
