@@ -9,6 +9,7 @@
     "hubot-bcycle-finder": "^2.1.1",
     "hubot-darksky": "^1.1.0",
     "hubot-diagnostics": "0.0.2",
+    "hubot-dotenv": "^1.0.0",
     "hubot-flickr-group-search": "^1.1.1",
     "hubot-google-images": "^0.2.7",
     "hubot-google-translate": "^0.2.1",
@@ -28,5 +29,8 @@
   },
   "engines": {
     "node": "6.10.x"
+  },
+  "scripts": {
+    "test": "hubot-dotenv --config-check"
   }
 }
