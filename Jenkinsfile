@@ -11,14 +11,15 @@ node {
 
     stage('Test image') {
         app.inside {
-            /* TODO */
-            sh 'exit 0'
+            sh 'cd /hubot'
+            sh 'cp .env-dist .env'
+            sh 'npm test'
         }
     }
 
     stage('Push image') {
         docker.withRegistry('https://registry.hub.docker.com', '5251fb33-a45a-4251-8271-b849fad23e03') {
-            app.push("${env.BUILD_NUMBER}")
+            app.push("build-${env.BUILD_NUMBER}")
             app.push("latest")
         }
     }
