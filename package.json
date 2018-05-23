@@ -31,6 +31,6 @@
     "node": "6.10.x"
   },
   "scripts": {
-    "test": "./node_modules/.bin/hubot-dotenv --config-check"
+    "test": "hubot-dotenv --config-check"
   }
 }

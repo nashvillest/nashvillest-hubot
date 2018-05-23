@@ -11,7 +11,7 @@ node {
 
     stage('Test image') {
         app.inside {
-            sh 'npm test'
+            sh './node_modules/.bin/hubot-dotenv --config-check'
         }
     }
 
