@@ -11,6 +11,7 @@ node {
 
     stage('Test image') {
         app.inside {
+            sh 'cp .env-dist .env'
             sh 'npm test'
         }
     }

@@ -28,6 +28,7 @@
     "hubot-slack": "^4.4.0"
   },
   "scripts": {
+    "start": "bin/hubot --adapter slack --alias '!'",
     "localtest": "hubot-dotenv --alias \"!\"",
     "test": "hubot-dotenv --config-check"
   }
