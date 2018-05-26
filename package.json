@@ -29,6 +29,6 @@
   },
   "scripts": {
     "localtest": "hubot-dotenv --alias \"!\"",
-    "test": "./bin/test"
+    "test": "hubot-dotenv --config-check"
   }
 }

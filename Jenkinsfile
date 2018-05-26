@@ -11,8 +11,6 @@ node {
 
     stage('Test image') {
         app.inside {
-            sh 'cd /hubot'
-            sh 'cp .env-dist .env'
             sh 'npm test'
         }
     }
