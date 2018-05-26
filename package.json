@@ -27,10 +27,8 @@
     "hubot-shipit": "^0.2.1",
     "hubot-slack": "^4.4.0"
   },
-  "engines": {
-    "node": "6.10.x"
-  },
   "scripts": {
-    "test": "hubot-dotenv --config-check"
+    "localtest": "hubot-dotenv --alias \"!\"",
+    "test": "./bin/test"
   }
 }

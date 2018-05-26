@@ -18,9 +18,13 @@ You can test your hubot by running the following, however some plugins will not
 behave as expected unless the [environment variables](#configuration) they rely
 upon have been set.
 
+Begin by ensuring you have the `.env` file available.
+
+    % cp .env-dist .env
+
 You can start batpoet locally by running:
 
-    % bin/hubot
+    % npm run localtest
 
 You'll see some start up output and a prompt:
 
