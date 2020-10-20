@@ -24,7 +24,7 @@
     "hubot-redis-brain": "1.0.0",
     "hubot-rules": "^1.0.0",
     "hubot-shipit": "^0.2.1",
-    "hubot-slack": "^4.8.0"
+    "hubot-slack": "^4.8.1"
   },
   "scripts": {
     "start": "bin/hubot --adapter slack --alias '!'",
