@@ -28,7 +28,7 @@ node {
 
         stage('Remote SSH') {
             try {
-                sshCommand remote: remote, command: "cd /opt/nashvillest-hubot/ && git pull && docker-compose rebuild --pull && docker-compose restart"
+                sshCommand remote: remote, command: "cd /opt/nashvillest-hubot/ && git pull && docker-compose build hubot && docker-compose up --no-deps -d hubot"
                 slackSend (message: "${currentBuild.fullDisplayName} Success after ${currentBuild.durationString.minus(' and counting')} (<${env.BUILD_URL}|Open>)", color: '#37b787')
             } catch (ex) {
                 slackSend (message: "${currentBuild.fullDisplayName} Failed after ${currentBuild.durationString.minus(' and counting')} (<${env.BUILD_URL}|Open>)", color: '#ff0000')
