@@ -11,7 +11,7 @@
     "hubot-diagnostics": "1.0.0",
     "hubot-dotenv": "^1.0.0",
     "hubot-enbw": "^1.0.8",
-    "hubot-flickr-group-search": "^1.1.8",
+    "hubot-flickr-group-search": "^1.1.9",
     "hubot-google-images": "^0.2.7",
     "hubot-google-translate": "^0.2.1",
     "hubot-help": "^1.0.1",
