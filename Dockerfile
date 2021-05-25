@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:16
 MAINTAINER Stephen Yeargin <stephen@yearg.in>
 
 # Install required packages
