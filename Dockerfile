@@ -1,5 +1,4 @@
 FROM node:16
-MAINTAINER Stephen Yeargin <stephen@yearg.in>
 
 # Install required packages
 RUN apt-get update && \
@@ -18,8 +17,4 @@ USER hubot
 # Install dependencies
 RUN npm install
 
-# Default adapter and name
-ENV HUBOT_ADAPTER slack
-ENV HUBOT_NAME batpoet
-
-ENTRYPOINT ["/bin/sh", "-c", "bin/hubot --name $HUBOT_NAME --adapter $HUBOT_ADAPTER --alias '!'"]
+ENTRYPOINT ["/bin/sh", "-c", "npm run start"]

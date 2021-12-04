@@ -1,1 +1,1 @@
-web: bin/hubot -a slack -n batpoet --alias '!'
+web: npm run start
