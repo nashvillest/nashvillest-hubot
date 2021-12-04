@@ -28,7 +28,7 @@
     "hubot-slack": "^4.9.0"
   },
   "scripts": {
-    "start": "bin/hubot --adapter --name batpoet slack --alias '!'",
+    "start": "bin/hubot --adapter slack --name batpoet --alias '!'",
     "local": "hubot-dotenv --name batpoet --alias \"!\"",
     "test": "hubot-dotenv --config-check"
   }
