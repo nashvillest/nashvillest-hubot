@@ -9,6 +9,7 @@
     "hubot-bcycle-finder": "^2.2.0",
     "hubot-dad-jokes": "^1.0.3",
     "hubot-diagnostics": "1.0.0",
+    "hubot-discord": "^2.1.0",
     "hubot-dotenv": "^1.0.0",
     "hubot-flickr-group-search": "^1.1.12",
     "hubot-google-images": "^0.2.7",
@@ -27,7 +28,9 @@
     "hubot-slack": "^4.10.0"
   },
   "scripts": {
-    "start": "bin/hubot --adapter slack --name batpoet --alias '!'",
+    "start": "npm run start:slack",
+    "start:slack": "PORT=0 bin/hubot --adapter slack --name batpoet --alias '!'",
+    "start:discord": "PORT=0 bin/hubot --adapter discord --name batpoet --alias '!'",
     "local": "hubot-dotenv --name batpoet --alias \"!\"",
     "test": "hubot-dotenv --config-check"
   }

@@ -17,4 +17,4 @@ USER hubot
 # Install dependencies
 RUN npm install
 
-ENTRYPOINT ["/bin/sh", "-c", "npm run start"]
+ENTRYPOINT ["/bin/sh", "-c", "bin/start.sh"]
