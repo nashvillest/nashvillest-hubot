@@ -29,8 +29,8 @@
   },
   "scripts": {
     "start": "npm run start:slack",
-    "start:slack": "PORT=8084 bin/hubot --adapter slack --name batpoet --alias '!'",
-    "start:discord": "PORT=8085 bin/hubot --adapter discord --name batpoet --alias '!'",
+    "start:slack": "PORT=0 bin/hubot --adapter slack --name batpoet --alias '!'",
+    "start:discord": "PORT=0 bin/hubot --adapter discord --name batpoet --alias '!'",
     "local": "hubot-dotenv --name batpoet --alias \"!\"",
     "test": "hubot-dotenv --config-check"
   }
