@@ -21,7 +21,6 @@
     "hubot-nashville-news": "^1.0.19",
     "hubot-plusplus": "^1.4.0",
     "hubot-pollen": "^1.1.14",
-    "hubot-pugme": "^0.1.1",
     "hubot-redis-brain": "hubotio/hubot-redis-brain",
     "hubot-rules": "^1.0.0",
     "hubot-shipit": "^0.2.1",
