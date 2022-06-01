@@ -7,7 +7,7 @@
   "dependencies": {
     "hubot": "^3.3.2",
     "hubot-bcycle-finder": "^2.2.1",
-    "hubot-dad-jokes": "^1.0.3",
+    "hubot-dad-jokes": "^1.0.4",
     "hubot-diagnostics": "1.0.0",
     "hubot-discord": "^2.1.0",
     "hubot-dotenv": "^1.0.0",
