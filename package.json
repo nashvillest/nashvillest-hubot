@@ -20,7 +20,7 @@
     "hubot-nashville-electric": "^1.0.7",
     "hubot-nashville-news": "^1.0.23",
     "hubot-plusplus": "^1.4.0",
-    "hubot-pollen": "^1.1.18",
+    "hubot-pollen": "^1.1.19",
     "hubot-redis-brain": "hubotio/hubot-redis-brain",
     "hubot-rules": "^1.0.0",
     "hubot-shipit": "^0.2.1",
