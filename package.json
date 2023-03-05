@@ -32,5 +32,8 @@
     "start:discord": "PORT=0 bin/hubot --adapter discord --name batpoet --alias '!'",
     "local": "hubot-dotenv --name batpoet --alias \"!\"",
     "test": "hubot-dotenv --config-check"
+  },
+  "volta": {
+    "node": "16.19.1"
   }
 }
