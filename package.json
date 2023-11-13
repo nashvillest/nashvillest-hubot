@@ -23,7 +23,7 @@
     "hubot-plusplus": "^1.4.0",
     "hubot-pollen": "^1.1.20",
     "hubot-redis-brain": "hubotio/hubot-redis-brain",
-    "hubot-rules": "^1.0.0",
+    "hubot-rules": "^2.1.1",
     "hubot-shipit": "^0.2.1",
     "hubot-slack": "^4.10.0"
   },
