@@ -19,7 +19,7 @@
     "hubot-hockey": "^6.0.6",
     "hubot-homepage": "^1.0.19",
     "hubot-nashville-electric": "^1.0.10",
-    "hubot-nashville-news": "^1.0.25",
+    "hubot-nashville-news": "^1.0.26",
     "hubot-plusplus": "^1.4.0",
     "hubot-pollen": "^1.1.21",
     "hubot-redis-brain": "hubotio/hubot-redis-brain",
