@@ -15,7 +15,6 @@
     "hubot-dotenv": "^1.0.0",
     "hubot-flickr-group-search": "^1.1.20",
     "hubot-google-images": "^0.2.7",
-    "hubot-google-translate": "^0.2.1",
     "hubot-help": "^2.1.2",
     "hubot-hockey": "^6.1.0",
     "hubot-homepage": "^1.1.2",
