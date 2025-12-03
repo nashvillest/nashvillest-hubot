@@ -5,6 +5,7 @@
   "author": "Nashvillest <tips@nashvillest.com>",
   "description": "Honoring the legacy of Nashville public access star Joey Bowker.",
   "dependencies": {
+    "@slack/web-api": "^7.13.0",
     "@stephenyeargin/hubot-openweathermap": "^1.2.3",
     "coffeescript": "jashkenas/coffeescript#7b9fbf2c7694c38b71f921ac370f33cdcf835242",
     "hubot": "^4",
