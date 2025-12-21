@@ -6,8 +6,6 @@
 //   hubot santa me - Adds a Santa hat to your avatar (Slack only).
 //   hubot santa <image url> - Adds a Santa hat to the provided image.
 //
-// Category: social
-//
 // Author:
 //   dgoodlad
 
