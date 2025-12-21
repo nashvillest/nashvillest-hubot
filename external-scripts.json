@@ -5,14 +5,11 @@
   "hubot-dad-jokes",
   "hubot-diagnostics",
   "hubot-flickr-group-search",
-  "hubot-google-images",
   "hubot-help",
   "hubot-hockey",
   "hubot-homepage",
   "hubot-nashville-electric",
   "hubot-nashville-news",
-  "hubot-plusplus",
   "hubot-pollen",
-  "hubot-redis-brain",
-  "hubot-shipit"
+  "hubot-redis-brain"
 ]
