@@ -7,6 +7,7 @@
   "dependencies": {
     "@slack/web-api": "^7.13.0",
     "@stephenyeargin/hubot-openweathermap": "stephenyeargin/hubot-openweathermap#main",
+    "coffeescript": "^2.7.0",
     "hubot": "^4",
     "hubot-airnow-gov": "^1.2.3",
     "hubot-bcycle-finder": "^2.3.4",
@@ -35,6 +36,6 @@
     "test": "hubot-dotenv --config-check"
   },
   "volta": {
-    "node": "20.17.0"
+    "node": "24.12.0"
   }
 }
