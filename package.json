@@ -6,7 +6,7 @@
   "description": "Honoring the legacy of Nashville public access star Joey Bowker.",
   "dependencies": {
     "@slack/web-api": "^7.13.0",
-    "@stephenyeargin/hubot-openweathermap": "^2.0.0",
+    "@stephenyeargin/hubot-openweathermap": "^github:stephenyeargin/hubot-openweathermap#main",
     "hubot": "^4",
     "hubot-airnow-gov": "^1.2.3",
     "hubot-bcycle-finder": "^2.3.4",
