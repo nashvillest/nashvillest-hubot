@@ -8,7 +8,7 @@
     "@hubot-friends/hubot-discord": "^4.1.0",
     "@hubot-friends/hubot-slack": "^3.7.2",
     "@slack/web-api": "^7.13.0",
-    "@stephenyeargin/hubot-openweathermap": "^2.1.0",
+    "@stephenyeargin/hubot-openweathermap": "^2.1.1",
     "hubot": "^13",
     "hubot-airnow-gov": "^1.2.3",
     "hubot-bcycle-finder": "^2.3.4",
