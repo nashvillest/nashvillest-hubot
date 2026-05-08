@@ -10,6 +10,7 @@
   "hubot-homepage",
   "hubot-nashville-electric",
   "hubot-nashville-news",
+  "hubot-ollama",
   "hubot-pollen",
   "hubot-redis-brain"
 ]
