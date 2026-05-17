@@ -21,7 +21,7 @@
     "hubot-homepage": "^1.1.5",
     "hubot-nashville-electric": "^1.2.4",
     "hubot-nashville-news": "^1.1.5",
-    "hubot-ollama": "^1.11.0",
+    "hubot-ollama": "^1.11.2",
     "hubot-pollen": "^1.4.0",
     "hubot-redis-brain": "hubotio/hubot-redis-brain#b7a7ac48b18c6043439e2caa461e1602de31ff2c"
   },
