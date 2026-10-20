@@ -1,23 +1,12 @@
-FROM node:20-bullseye
-
-# Set non-interactive mode for apt-get
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Install required packages
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends libfuzzy-dev libicu-dev redis-server && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Move files into place
-COPY . /opt/hubot
+FROM node:24-trixie AS deps
 WORKDIR /opt/hubot
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
 
-# Create a hubot user
-RUN useradd -ms /bin/bash hubot
-RUN chown -fR hubot /opt/hubot
-USER hubot
-
-# Install dependencies
-RUN npm install
-
-ENTRYPOINT ["/bin/sh", "-c", "bin/start.sh"]
+FROM node:24-trixie-slim
+ENV NODE_ENV=production
+WORKDIR /opt/hubot
+COPY --from=deps --chown=node:node /opt/hubot/node_modules ./node_modules
+COPY --chown=node:node . .
+USER node
+ENTRYPOINT ["bin/start.sh"]

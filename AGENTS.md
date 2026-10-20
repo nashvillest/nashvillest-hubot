@@ -28,7 +28,7 @@ These notes make AI agents productive immediately in this Hubot project (bot nam
 
 ## Environment and integration notes
 - Core env you’ll likely need:
-  - Redis: `REDIS_URL=redis://...` for hubot-redis-brain. In Docker Compose, service DNS is `nashvillest-redis`. Note: Compose sets `REDIS_URL=redis://nashvillest-redis:16379` (non-default port); default Redis is 6379.
+  - Redis: `REDIS_URL=redis://...` for hubot-redis-brain. In Docker Compose, service DNS is `nashvillest-redis`. Compose sets `REDIS_URL=redis://nashvillest-redis:6379` and persists data to the `redis-data` volume.
   - Adapters: Slack/Discord tokens and secrets per adapter docs (do not guess names; consult `hubot-slack` and `hubot-discord`).
   - hubot logging: set `HUBOT_LOG_LEVEL=debug` for verbose logs.
 - Local config flows through `.env` (copy from `.env-dist` if present) and is loaded by `hubot-dotenv`.
@@ -45,7 +45,7 @@ These notes make AI agents productive immediately in this Hubot project (bot nam
 - The container starts both Slack and Discord; ensure credentials for both or disable one by overriding the entrypoint/command.
 - `PORT=0` in start scripts is intentional to avoid binding conflicts. Don’t remove unless you know the adapter’s network needs.
 - Some external scripts (weather, hockey, etc.) require API keys; missing keys can cause runtime warnings or disabled commands, not crashes.
-- When using Redis in Compose, verify `REDIS_URL` host and port match the running service; Compose uses `nashvillest-redis:16379`.
+- When using Redis in Compose, verify `REDIS_URL` host and port match the running service; Compose uses `nashvillest-redis:6379`.
 
 ## Example: add a simple command
 - Create `scripts/hello.js` exporting a function that registers `robot.respond(/hello/i, (msg) => msg.reply('Hi!'))`.

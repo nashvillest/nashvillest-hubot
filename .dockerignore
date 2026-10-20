@@ -1,0 +1,7 @@
+.git
+.github
+.flox
+node_modules
+.env
+.hubot_history
+.DS_Store
