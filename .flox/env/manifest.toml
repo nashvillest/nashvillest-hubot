@@ -1,0 +1,56 @@
+schema-version = "1.17.0"
+
+description = "Honoring the legacy of Nashville public access star Joey Bowker."
+
+[install]
+nodejs.pkg-path = "nodejs"
+figlet.pkg-path = "figlet"
+
+[vars]
+NPM_CONFIG_PREFIX = "$FLOX_ENV_CACHE/npm-global"
+
+[hook]
+on-activate = """
+  mkdir -p "$NPM_CONFIG_PREFIX"
+  export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
+  if find node_modules -maxdepth 1 -type l 2>/dev/null | grep -q .; then
+    echo "Skipping npm install: linked package(s) detected in node_modules"
+  else
+    npm install
+  fi
+  if [[ -f ".env" ]]; then
+      echo "Loading environment variables ..."
+      set -a
+      source .env
+      set +a
+  fi
+  figlet -f slant "Nashvillest Hubot"
+  echo ""
+"""
+
+[build.nashvillest-hubot]
+description = "nashvillest-hubot Slack bot"
+version = "1.0.0"
+command = """
+  set -e
+
+  mkdir -p "$out/lib/nashvillest-hubot" "$out/bin"
+
+  cp package.json package-lock.json external-scripts.json "$out/lib/nashvillest-hubot/"
+  cp -r src/ bin/ scripts/ "$out/lib/nashvillest-hubot/"
+
+  cd "$out/lib/nashvillest-hubot"
+  npm install --omit=dev
+
+  cat > "$out/bin/nashvillest-hubot" << 'WRAPPER'
+#!/usr/bin/env bash
+set -a
+source .env
+set +a
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+cd "$SCRIPT_DIR/../lib/nashvillest-hubot"
+exec node node_modules/.bin/hubot --adapter @hubot-friends/hubot-slack --alias '!' "$@"
+WRAPPER
+  chmod +x "$out/bin/nashvillest-hubot"
+"""
+

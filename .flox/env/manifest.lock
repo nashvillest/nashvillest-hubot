@@ -1,0 +1,208 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "schema-version": "1.17.0",
+    "description": "Honoring the legacy of Nashville public access star Joey Bowker.",
+    "install": {
+      "figlet": {
+        "pkg-path": "figlet"
+      },
+      "nodejs": {
+        "pkg-path": "nodejs"
+      }
+    },
+    "vars": {
+      "NPM_CONFIG_PREFIX": "$FLOX_ENV_CACHE/npm-global"
+    },
+    "hook": {
+      "on-activate": "  mkdir -p \"$NPM_CONFIG_PREFIX\"\n  export PATH=\"$NPM_CONFIG_PREFIX/bin:$PATH\"\n  if find node_modules -maxdepth 1 -type l 2>/dev/null | grep -q .; then\n    echo \"Skipping npm install: linked package(s) detected in node_modules\"\n  else\n    npm install\n  fi\n  if [[ -f \".env\" ]]; then\n      echo \"Loading environment variables ...\"\n      set -a\n      source .env\n      set +a\n  fi\n  figlet -f slant \"Nashvillest Hubot\"\n  echo \"\"\n"
+    },
+    "options": {},
+    "build": {
+      "nashvillest-hubot": {
+        "command": "  set -e\n\n  mkdir -p \"$out/lib/nashvillest-hubot\" \"$out/bin\"\n\n  cp package.json package-lock.json external-scripts.json \"$out/lib/nashvillest-hubot/\"\n  cp -r src/ bin/ scripts/ \"$out/lib/nashvillest-hubot/\"\n\n  cd \"$out/lib/nashvillest-hubot\"\n  npm install --omit=dev\n\n  cat > \"$out/bin/nashvillest-hubot\" << 'WRAPPER'\n#!/usr/bin/env bash\nset -a\nsource .env\nset +a\nSCRIPT_DIR=$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\ncd \"$SCRIPT_DIR/../lib/nashvillest-hubot\"\nexec node node_modules/.bin/hubot --adapter @hubot-friends/hubot-slack --alias '!' \"$@\"\nWRAPPER\n  chmod +x \"$out/bin/nashvillest-hubot\"\n",
+        "version": "1.0.0",
+        "description": "nashvillest-hubot Slack bot"
+      }
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "figlet",
+      "broken": false,
+      "derivation": "/nix/store/nvqm81id7sg6in5d8f47q1j8k1jx8pjz-figlet-2.2.5.drv",
+      "description": "Program for making large letters out of ordinary text",
+      "install_id": "figlet",
+      "license": "AFL-2.1",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "name": "figlet-2.2.5",
+      "pname": "figlet",
+      "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "rev_count": 1092090,
+      "rev_date": "2026-10-14T05:35:54Z",
+      "scrape_date": "2026-10-17T04:01:53.065702Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.2.5",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/6hcqvbl00viin6y065vyrfjm9vi5k96m-figlet-2.2.5"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "figlet",
+      "broken": false,
+      "derivation": "/nix/store/gcrhyzhrkqfkhs64m6mz2dx5312gp3js-figlet-2.2.5.drv",
+      "description": "Program for making large letters out of ordinary text",
+      "install_id": "figlet",
+      "license": "AFL-2.1",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "name": "figlet-2.2.5",
+      "pname": "figlet",
+      "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "rev_count": 1092090,
+      "rev_date": "2026-10-14T05:35:54Z",
+      "scrape_date": "2026-10-17T04:31:09.126639Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.2.5",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/pz70apnaynyfxih80lbsgpi24akh9s1j-figlet-2.2.5"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "figlet",
+      "broken": false,
+      "derivation": "/nix/store/9nbh0v7b66g2f68n5qvsp449rag03cm2-figlet-2.2.5.drv",
+      "description": "Program for making large letters out of ordinary text",
+      "install_id": "figlet",
+      "license": "AFL-2.1",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "name": "figlet-2.2.5",
+      "pname": "figlet",
+      "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "rev_count": 1092090,
+      "rev_date": "2026-10-14T05:35:54Z",
+      "scrape_date": "2026-10-17T05:06:05.145375Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.2.5",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/xk9a17vivqshvwpn1q1x7fcwgi5nw5k6-figlet-2.2.5"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/kfalw8dhzga1b294cr5zz1diwgkigrra-nodejs-24.21.0.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "name": "nodejs-24.21.0",
+      "pname": "nodejs",
+      "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "rev_count": 1092090,
+      "rev_date": "2026-10-14T05:35:54Z",
+      "scrape_date": "2026-10-17T04:01:53.246641Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "24.21.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/7cr3l1m9yyng2hscs8lj4x4bj0hm7908-nodejs-24.21.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/ij09sr7m9ngn7iafal95327svx411rjf-nodejs-24.21.0.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "name": "nodejs-24.21.0",
+      "pname": "nodejs",
+      "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "rev_count": 1092090,
+      "rev_date": "2026-10-14T05:35:54Z",
+      "scrape_date": "2026-10-17T04:31:09.388970Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "24.21.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/8lgcgi9riqm71v9ibjw5qjcwwr5nfm83-nodejs-24.21.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/m4gixiwcnhplm2mcd5nnd6i0lxncnyji-nodejs-24.21.0.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "name": "nodejs-24.21.0",
+      "pname": "nodejs",
+      "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+      "rev_count": 1092090,
+      "rev_date": "2026-10-14T05:35:54Z",
+      "scrape_date": "2026-10-17T05:06:05.306804Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "24.21.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/gxq2cd70i077rah1d4hkzc1lpq8q4pv8-nodejs-24.21.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}
