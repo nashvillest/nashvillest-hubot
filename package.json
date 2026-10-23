@@ -31,8 +31,5 @@
     "start:discord": "PORT=0 bin/hubot --adapter @hubot-friends/hubot-discord --name batpoet --alias '!'",
     "local": "hubot-dotenv --name batpoet --alias \"!\"",
     "test": "node -e \"require('dotenv').config(); if(!process.env.HUBOT_SLACK_BOT_TOKEN) { console.error('Missing HUBOT_SLACK_BOT_TOKEN in .env'); process.exit(1); } console.log('Environment configuration OK');\""
-  },
-  "volta": {
-    "node": "24.15.0"
   }
 }
