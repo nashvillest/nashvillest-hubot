@@ -6,19 +6,29 @@
 //   hubot santa me - Adds a Santa hat to your avatar (Slack only).
 //   hubot santa <image url> - Adds a Santa hat to the provided image.
 //
+// Configuration:
+//   HUBOT_SANTA_API_URL - santa-me /santa-hatify endpoint (https://github.com/dgoodlad/santa-me)
+//
 // Author:
 //   dgoodlad
+//
+// Category:
+//   social
 
 const {
   WebClient
 } = require('@slack/web-api');
-const santaAPIURL = "https://santa-me-production.up.railway.app/santa-hatify";
+const santaAPIURL = process.env.HUBOT_SANTA_API_URL;
 
 // Cooldown in milliseconds to prevent spam
 const COOLDOWN_MS = 5000;
 
 module.exports = (robot) => {
   robot.respond(/santa\s+(?:me\s+)?(.+)/i, async (res) => {
+    if(!santaAPIURL) {
+      return res.reply("Santa hat service not configured. Please set HUBOT_SANTA_API_URL.");
+    }
+
     const now = Date.now();
     const userId = res.message.user.id;
     const lastUsed = robot.brain.get(`santa:${userId}`) || 0;
@@ -31,8 +41,8 @@ module.exports = (robot) => {
     const arg = res.match[1].trim(); // URL or "me" alone
     let imageURL;
 
-    const isSlack =
-      (robot.adapterName || robot.adapter?.name || "").toLowerCase().includes("slack");
+    const adapterName = robot.adapter?.name ?? robot.adapterName ?? '';
+    const isSlack = /slack/i.test(adapterName)
 
     // Case 1: user typed only "me"
     if(arg.toLowerCase() === "me") {
@@ -43,10 +53,10 @@ module.exports = (robot) => {
       }
 
       try {
-        const slackToken = process.env.HUBOT_SLACK_TOKEN;
+        const slackToken = process.env.HUBOT_SLACK_BOT_TOKEN;
         if(!slackToken) {
           return res.reply(
-            "Slack token not configured. Please set HUBOT_SLACK_TOKEN."
+            "Slack token not configured. Please set HUBOT_SLACK_BOT_TOKEN."
           );
         }
 
@@ -99,7 +109,7 @@ module.exports = (robot) => {
     // Send message
     try {
       if(isSlack) {
-        const slackToken = process.env.HUBOT_SLACK_TOKEN;
+        const slackToken = process.env.HUBOT_SLACK_BOT_TOKEN;
         const web = new WebClient(slackToken);
 
         const threadTS =
