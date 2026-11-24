@@ -30,6 +30,11 @@
     "start:slack": "PORT=0 bin/hubot --adapter @hubot-friends/hubot-slack --name batpoet --alias '!'",
     "start:discord": "PORT=0 bin/hubot --adapter @hubot-friends/hubot-discord --name batpoet --alias '!'",
     "local": "hubot-dotenv --name batpoet --alias \"!\"",
-    "test": "node -e \"require('dotenv').config(); if(!process.env.HUBOT_SLACK_BOT_TOKEN) { console.error('Missing HUBOT_SLACK_BOT_TOKEN in .env'); process.exit(1); } console.log('Environment configuration OK');\""
+    "test": "node -e \"require('dotenv').config(); if(!process.env.HUBOT_SLACK_BOT_TOKEN) { console.error('Missing HUBOT_SLACK_BOT_TOKEN in .env'); process.exit(1); } console.log('Environment configuration OK');\"",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0"
   }
 }
